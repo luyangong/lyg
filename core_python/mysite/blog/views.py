@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from datetime import datetime
+# from django.http import HttpResponse
+# from django.template import loader, Context
 from blog.models import BlogPost
 
 # Create your views here.
 def archive(request):
-    post = BlogPost(title='mocktitle', body='mockbody', timestamp=datetime.now())
-    return render(request, 'archive.html', {'posts': [post]})
+    posts = BlogPost.objects.all()
+    return render(request, "archive.html",
+    {'posts': posts, }
+    )
