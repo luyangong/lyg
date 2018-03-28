@@ -1,6 +1,7 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
-# from django.template import loader, Context
+from django.http import HttpResponseRedirect
+from datetime import datetime
+# from django.template import RequestContext
 from blog.models import BlogPost
 
 # Create your views here.
@@ -9,3 +10,12 @@ def archive(request):
     return render(request, "archive.html",
     {'posts': posts, }
     )
+
+def create_blogpost(request):
+    if request.method == 'POST':
+        BlogPost(
+        title=request.POST.get('title'),
+        body=request.POST.get('body'),
+        timestamp=datetime.now(),
+        ).save()
+    return HttpResponseRedirect('/blog/')
