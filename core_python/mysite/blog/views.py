@@ -5,7 +5,7 @@ from blog.models import BlogPost
 
 # Create your views here.
 def archive(request):
-    posts = BlogPost.objects.all()
+    posts = BlogPost.objects.all().order_by('-timestamp')[:10]
     return render(request, "archive.html",
     {'posts': posts, }
     )
