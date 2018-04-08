@@ -1,7 +1,7 @@
 import urllib.request, urllib.error, urllib.parse
 
-LOGIN = '15922065952'
-PASSWD = '4433210'
+LOGIN = '***'
+PASSWD = '***'
 URL = 'http://www.baidu.com'
 REALM = 'Secure Archive'
 
