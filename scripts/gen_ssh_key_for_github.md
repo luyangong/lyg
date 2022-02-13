@@ -5,7 +5,7 @@
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your email address"
 ```
-# 2.复制到github
+## 2.复制到github
 
 复制 ~/.ssh/id_rsa.pub的内容到github
 
